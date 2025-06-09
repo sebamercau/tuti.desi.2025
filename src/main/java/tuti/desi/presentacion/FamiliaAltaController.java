@@ -9,20 +9,21 @@ import tuti.desi.entidades.Familia;
 import tuti.desi.servicios.FamiliaAltaService;
 
 @Controller
-@RequestMapping("/familias/alta")
+@RequestMapping("/familias")
 public class FamiliaAltaController {
 
     @Autowired
     private FamiliaAltaService familiaAltaService;
 
-    @GetMapping
+    @GetMapping("/alta")
     public String mostrarFormularioAlta(Model modelo) {
         modelo.addAttribute("familia", new Familia());
-        return "familias/altafamilia";
+        return "familias/familiaAlta";
     }
 
-    @PostMapping
-    public String procesarAlta(@ModelAttribute("familia") Familia familia) {
+    @PostMapping("/guardar")
+    public String procesarAlta(@ModelAttribute("familia") Familia familia){
+    	
         familiaAltaService.guardar(familia);
         return "redirect:/familias";
     }

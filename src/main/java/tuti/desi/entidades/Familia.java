@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.Id;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,8 +20,10 @@ public class Familia {
     private LocalDate fechaRegistro;
     private Integer nroFamilia;
 
-    @OneToMany(mappedBy = "familia")
+    @OneToMany(mappedBy = "familia", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Asistido> integrantes;
+
+    
 
     @OneToMany(mappedBy = "familia")
     private List<EntregaAsistencia> entregas;
@@ -58,4 +60,18 @@ public class Familia {
     public void setActiva(boolean activa) { 
     	this.activa = activa; 
     	}
+    public List<Asistido> getIntegrantes() {
+    	return integrantes; }
+    
+    public void setIntegrantes(List<Asistido> integrantes) { 
+    	this.integrantes = integrantes; }
+
+    public List<EntregaAsistencia> getEntregas() {
+    	return entregas; }
+    public void setEntregas(List<EntregaAsistencia> entregas) {
+    	this.entregas = entregas; }
+
+	public Long getId() {
+		return null;
+	}
 }

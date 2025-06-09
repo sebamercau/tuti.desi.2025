@@ -6,18 +6,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import tuti.desi.accesoDatos.FamiliaRepo;
+import tuti.desi.servicios.FamiliaBuscarService;
 
 @Controller
 @RequestMapping("/familias")
 public class FamiliaBuscarController {
 
-    @Autowired
-    private FamiliaRepo familiaRepo;
+	  @Autowired
+	    private FamiliaBuscarService familiaBuscarService;
 
-    @GetMapping
-    public String mostrarListado(Model modelo) {
-        modelo.addAttribute("familias", familiaRepo.findByActivaTrue());
-        return "familias/listado";
-    }
+	    @GetMapping("/buscar")
+	    public String mostrarListado(Model modelo) {
+	        modelo.addAttribute("familias", familiaBuscarService.buscarActivas());
+	        return "familias/listado";
+	    }
 }
