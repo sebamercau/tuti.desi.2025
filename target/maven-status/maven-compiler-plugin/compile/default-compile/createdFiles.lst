@@ -1,0 +1,16 @@
+tuti\desi\entidades\Voluntario.class
+tuti\desi\entidades\Receta.class
+tuti\desi\entidades\Asistido.class
+tuti\desi\entidades\Persona.class
+tuti\desi\presentacion\RecetaEditarController.class
+tuti\desi\servicios\RecetaServiceImpl.class
+tuti\desi\entidades\Condimento.class
+tuti\desi\entidades\Ingrediente.class
+tuti\desi\Desi20251Application.class
+tuti\desi\accesoDatos\RecetaRepo.class
+tuti\desi\entidades\EntregaAsistencia.class
+tuti\desi\entidades\Familia.class
+tuti\desi\entidades\ItemReceta.class
+tuti\desi\entidades\Preparacion.class
+tuti\desi\entidades\Producto.class
+tuti\desi\servicios\RecetaService.class
